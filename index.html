@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="scoreboard">
+            <div class="title">
+                <p>ROCK</p>
+                <p>PAPER</p>
+                <p>SCISSORS</p>
+            </div>
+            <div class="score">
+                <div class="computer-score">
+                    <p>COMPUTER SCORE</p>
+                    <h1>0</h1>
+                </div>
+                <div class="your-score">
+                    <p>YOUR SCORE</p>
+                    <h1>0</h1>
+                </div>
+            </div>
+        </div>
+        <div class="playground">
+            <div class="hand">
+                <img src="./assets/rock.png" alt="rock" onclick="pickUserHand('rock')" id="rock">
+                <img src="./assets/rockbg.png" alt="rockbg" onclick="pickUserHand('rock')" class="bgimg">
+            </div>
+            <div class="hand">
+                <img src="./assets/scissors.png" alt="scissors" onclick="pickUserHand('scissors')" id="scissors">
+                <img src="./assets/scissorsbg.png" alt="scissoorsbg" onclick="pickUserHand('scissors')" class="bgimg">
+            </div>
+            <div class="hand">
+                <img src="./assets/paper.png" alt="paper" onclick="pickUserHand('paper')" id="paper">
+                <img src="./assets/paperbg.png" alt="paperbg" onclick="pickUserHand('paper')" class="bgimg">
+            </div>
+        </div>
+        <div class="contest">
+            <div class="userhand">
+                <h1>You Picked</h1>
+                <div class="handImage">
+                    <img id="userPick" src="./assets/paper.png">
+                    <img src="./assets/paperbg.png" class="bgimg">
+                </div>
+            </div>  
+            <div class="referee">
+                <div class="decision">
+                    <h2>YOU WIN</h2>
+                    <p>AGANIST PC</p>
+                </div>
+                <div class="newGame" onclick="setPlayAgain()">
+                    Play Again
+                </div>
+            </div>
+            <div class="computerhand">
+                <h1>PC Picked</h1>
+                <div class="handImage">
+                <img id="computerPick" src="./assets/rock.png">
+                <img src="./assets/rockbg.png" class="bgimg">
+                </div>
+            </div>
+        </div>
+        <div class="final">
+            <div class="trophy">
+                <img id="cup" src="./assets/Vector.png" alt="winner">
+                <img class="stars" src="./assets/Group 5.png" alt="winner">
+            </div>
+            <h1>HURRAY!!</h1>
+            <p>YOU WON THE GAME</p>
+            <button id="reset" onclick="setPlayAgain()">Play Again</button>
+        </div>
+        <div class="features">
+            <div class="rules">
+                <img class="red" src="./assets/Ellipse 6.png" alt="" onclick="hideRuleImage()">
+                <img class="cut" src="./assets/X.png" alt="" onclick="hideRuleImage()">
+                <p>Game Rules</p>
+                <ul>
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                    <li>If both players lay down the same hand, each player lays down another hand</li>
+                </ul>
+            </div>
+            <button id="rules" onclick="showRuleImage()">RULES</button>
+            <button id="winner" onclick="setWinner()">NEXT</button>
+        </div> 
+       
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
